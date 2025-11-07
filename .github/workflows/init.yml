@@ -29,7 +29,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COPILOT_TOKEN: ${{ secrets.COPILOT_PAT }}
         run: |
-          echo "$COPILOT_TOKEN" | copilot auth login --token-stdin
+          echo "$COPILOT_TOKEN" | gh auth login --with-token
 
       - name: Create testreport directory and list contents
         run: |
