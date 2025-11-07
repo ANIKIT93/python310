@@ -22,7 +22,7 @@ jobs:
         run: npm install -g npm@latest
 
       - name: Install GitHub Copilot CLI
-        run: npm install -g @githubnext/copilot-cli
+        run: npm install -g @github/copilot
 
       - name: Authenticate Copilot CLI
         env:
