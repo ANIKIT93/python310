@@ -1,0 +1,7 @@
+requests
+wheel
+tensorflow
+numpy
+pandas
+boto3
+moto
