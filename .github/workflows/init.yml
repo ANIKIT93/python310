@@ -33,6 +33,7 @@ jobs:
       - name: Install Flake 8 and run evaluation against
         shell: bash
         run: |
+          sudo 
           apt install python3-full
           apt install python3-pip -y
           apt install python3-venv -y
