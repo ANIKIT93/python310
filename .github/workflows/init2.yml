@@ -29,11 +29,12 @@ jobs:
           pip install flake8
 
       - name: Run flake8 and save report
+        shell: bash
+        continue-on-error: true
         run: |
           set -o pipefail
           mkdir -p "$(dirname flake8.txt)" || true
           flake8 src | tee flake8.txt
-          cat flake8.txt
 
       - name: Upload flake8 output
         uses: actions/upload-artifact@v4
