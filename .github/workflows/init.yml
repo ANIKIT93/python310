@@ -24,13 +24,11 @@ jobs:
         run: |
           sudo  apt install python3-flake8 -y
           python3 -V
-          python3 -m flake8 ./src >> flake8.txt
+          flake8 ./src >> flake8.txt
           ls -la .
           cat flake8.txt
           
           
-
-
      # - name: Install GitHub Copilot CLI
        # run: npm install -g @github/copilot
 
@@ -45,7 +43,6 @@ jobs:
         run: |
           mkdir -p testreport
           ls -la .
-
      # - name: Use Copilot CLI to generate Python file
       #  run: |
       #    copilot -p "create a simple python file to print hello world and save to helloworld.py in the root folder"
