@@ -1,6 +1,6 @@
 .venv*
 token*
-flake8.txt
+flake8*.txt
 __pycache__/
 *.pyc
 *.pyo

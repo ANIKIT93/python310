@@ -10,24 +10,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
+      #- name: Update apt packages
+       # shell: bash
+       # run: sudo apt-get update && sudo apt-get upgrade -y
+        
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: LS repo contents
         shell:  bash
         run: |
-         ls -la .        
+         ls -la .   
+
+      - name: Set up Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+
+      - name: Upgrade npm to 11.x or above
+        run: npm install -g npm@latest
         
       - name: Install Flake 8 and run evaluation against
         shell: bash
         run: |
           sudo  apt install python3-flake8 -y
           python3 -V
-          python3 -m flake8 ./src >> flake8.txt
-          ls -la .
+          python3 -m flake8 . >> flake8.txt
           cat flake8.txt
-          
+          # python3 -m pip install flake8
+          # sudo apt install python3-full -y
+          # sudo apt install python3-pip -y
+          # sudo apt install python3-venv -y
           
 
 
