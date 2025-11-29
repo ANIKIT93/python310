@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Update apt packages
-        shell: bash
-        run: sudo apt-get update && sudo apt-get upgrade -y
+      #- name: Update apt packages
+       # shell: bash
+     #   run: sudo apt-get update && sudo apt-get upgrade -y
         
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -29,6 +29,15 @@ jobs:
 
       - name: Upgrade npm to 11.x or above
         run: npm install -g npm@latest
+        
+      - name: Install Flake 8 and run evaluation against
+      - shell: bash
+      - run: |
+          python3 -V
+          python3 -m pip install flake8
+          python3 -m flake8 .flake8.txt
+          
+
 
      # - name: Install GitHub Copilot CLI
        # run: npm install -g @github/copilot
