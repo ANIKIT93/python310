@@ -32,7 +32,7 @@ jobs:
         shell: bash
         continue-on-error: true
         run: |
-          # set -o pipefail
+          set -o pipefail
           mkdir -p "$(dirname flake8.txt)" || true
           flake8 ./src| tee flake8.txt
 
