@@ -34,7 +34,7 @@ jobs:
         run: |
           set -o pipefail
           mkdir -p "$(dirname flake8.txt)" || true
-          flake8 src | tee flake8.txt
+          flake8 ./src >> flake8.txt
 
       - name: Upload flake8 output
         uses: actions/upload-artifact@v4
