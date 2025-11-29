@@ -10,8 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Update apt packages
+        shell: bash
+        run: sudo apt-get update && sudo apt-get upgrade -y
+        
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: LS repo contents
+        shell:  bash
+        run: |
+         ls -la .   
 
       - name: Set up Node.js 22.x
         uses: actions/setup-node@v4
@@ -21,21 +30,21 @@ jobs:
       - name: Upgrade npm to 11.x or above
         run: npm install -g npm@latest
 
-      - name: Install GitHub Copilot CLI
-        run: npm install -g @github/copilot
+     # - name: Install GitHub Copilot CLI
+       # run: npm install -g @github/copilot
 
-      - name: Authenticate Copilot CLI
-        env:
-          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COPILOT_TOKEN: ${{ secrets.COPILOT_PAT }}
-        run: |
-          echo "$COPILOT_TOKEN" | gh auth login --with-token
+     # - name: Authenticate Copilot CLI
+      #  env:
+       #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       #   COPILOT_TOKEN: ${{ secrets.COPILOT_PAT }}
+      #  run: |
+      #    echo "$COPILOT_TOKEN" | copilot auth login --token-stdin
 
       - name: Create testreport directory and list contents
         run: |
           mkdir -p testreport
-          ls -l
+          ls -la .
 
-      - name: Use Copilot CLI to generate Python file
-        run: |
-          copilot -p "create a simple python file to print hello world and save to helloworld.py in the root folder"
+     # - name: Use Copilot CLI to generate Python file
+      #  run: |
+      #    copilot -p "create a simple python file to print hello world and save to helloworld.py in the root folder"
