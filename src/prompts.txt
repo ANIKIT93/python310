@@ -1,0 +1,14 @@
+check for any pep 8 standard flake 8 errors in this file. Create an output file flake8.csv 
+with the following fields 
+[Line number where error , flake8 error code (ex. W308, E101.etc),Error code meaning]
+
+
+
+Refer flake8.csv and create a new py file called api_fixed.py that remediates the errors 
+identified in the csv file. Do not make any other changes and copy all 
+other non change files as-is from the original api.py file
+
+
+check file for flake8 errors PEP8. Create a csv flake8-2.csv to enlist all issues. 
+the csv file should have the following fields : 
+[Line number where error , flake8 error code (ex. W308, E101.etc),Error code meaning]

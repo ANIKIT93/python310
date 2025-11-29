@@ -1,0 +1,4 @@
+Line,Code,Meaning
+5,E302,"Expected 2 blank lines, found 1"
+24,W293,"Blank line contains whitespace"
+45,W293,"Blank line contains whitespace"
