@@ -24,7 +24,7 @@ jobs:
         run: |
           sudo  apt install python3-flake8 -y
           python3 -V
-          python3 -m flake8 ./src >> flake8.txt
+          flake8 ./src >> flake8.txt
           ls -la .
           cat flake8.txt
           
