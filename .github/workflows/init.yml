@@ -31,11 +31,16 @@ jobs:
         run: npm install -g npm@latest
         
       - name: Install Flake 8 and run evaluation against
-      - shell: bash
-      - run: |
+        shell: bash
+        run: |
+          apt install python3-full
+          apt install python3-pip -y
+          apt install python3-venv -y
+          apt install python3-flake8 -y
           python3 -V
           python3 -m pip install flake8
-          python3 -m flake8 .flake8.txt
+          python3 -m flake8 . >> flake8.txt
+          cat flake8.txt
           
 
 
